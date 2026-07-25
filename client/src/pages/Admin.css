@@ -1,0 +1,17 @@
+.admin-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 40px;
+}
+
+.admin-card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.admin-card h1 {
+  color: #0f172a;
+  margin-bottom: 15px;
+}

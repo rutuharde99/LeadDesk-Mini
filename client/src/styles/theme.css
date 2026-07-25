@@ -1,0 +1,36 @@
+:root{
+
+    /* Primary Colors */
+
+    --primary:#2563EB;
+    --primary-hover:#1D4ED8;
+
+    /* Background */
+
+    --background:#F8FAFC;
+    --card:#FFFFFF;
+
+    /* Text */
+
+    --heading:#1E293B;
+    --text:#64748B;
+
+    /* Border */
+
+    --border:#E2E8F0;
+
+    /* Status */
+
+    --success:#22C55E;
+    --warning:#F59E0B;
+    --danger:#EF4444;
+
+    /* Shadow */
+
+    --shadow:0 8px 24px rgba(0,0,0,.08);
+
+    /* Radius */
+
+    --radius:12px;
+
+}

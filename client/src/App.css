@@ -1,0 +1,28 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8fafc;
+  color: #1f2937;
+}
+
+/* Navbar */
+h1{
+    text-align:center;
+    margin-top:80px;
+    font-size:60px;
+    color:#1f2937;
+}
+
+p{
+    text-align:center;
+    font-size:22px;
+    color:#6b7280;
+    margin-top:15px;
+}

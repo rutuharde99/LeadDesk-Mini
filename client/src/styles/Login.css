@@ -1,0 +1,101 @@
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F8FAFC;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-card {
+    width: 90%;                /* default: small screens */
+    max-width: 360px;          /* limit width */
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Larger tablets */
+@media (min-width: 768px) {
+    .login-card {
+        max-width: 400px;
+        padding: 32px;
+    }
+}
+
+/* Desktop screens */
+@media (min-width: 1024px) {
+    .login-card {
+        max-width: 420px;
+        padding: 36px;
+    }
+}
+
+.login-card h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    color: #0F172A;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.login-card p {
+    text-align: center;
+    color: #64748B;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #334155;
+    font-size: 13px;
+}
+
+.input-group input {
+    padding: 12px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #2563EB;
+    box-shadow: 0 0 6px rgba(37, 99, 235, 0.4);
+}
+
+.login-btn {
+    width: 10%;
+    padding: 12px;
+    border: none;
+    background: linear-gradient(135deg, #2563EB, #1D4ED8);
+    color: white;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #1D4ED8, #0F172A);
+    transform: scale(1.05);
+}
+
+/* Smooth card animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
