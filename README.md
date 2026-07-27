@@ -34,7 +34,7 @@ admin123
 
 # Project Overview
 
-LeadDesk Mini is a Full Stack Lead Management Application built as part of the Digital Heroes Full Stack Development Internship Assignment.
+LeadDesk Mini is a Full Stack Lead Management Application built as part of the Digital Heroes Full Stack Development Training Task.
 
 The application allows users to submit business enquiries through a public landing page. All submitted leads are stored in a MySQL database. The administrator can securely log in, view all leads, search leads, and update their status.
 
@@ -49,7 +49,7 @@ The application allows users to submit business enquiries through a public landi
 - Server-side Validation
 - MySQL Database Integration
 - Admin Login using JWT Authentication
-- Secure Password Hashing with bcrypt
+- Secure Password Hashing using bcrypt
 - Admin Dashboard
 - View All Leads
 - Search Leads
@@ -97,7 +97,6 @@ The application allows users to submit business enquiries through a public landi
 ```text
 LeadDesk-Mini/
 
-│
 ├── client/
 │   ├── src/
 │   ├── public/
@@ -107,15 +106,12 @@ LeadDesk-Mini/
 │   ├── config/
 │   ├── controllers/
 │   ├── middleware/
-│   ├── models/
 │   ├── routes/
 │   ├── server.js
 │   └── package.json
 │
 ├── docs/
-│
 ├── screenshots/
-│
 └── README.md
 ```
 
@@ -163,19 +159,37 @@ The Admin Dashboard is protected using JWT Authentication.
 
 ## Lead APIs
 
+### Create Lead
+
+```
 POST /api/leads
+```
 
+### Get All Leads
+
+```
 GET /api/leads
+```
 
+### Update Lead Status
+
+```
 PUT /api/leads/:id
+```
 
+### Delete Lead
+
+```
 DELETE /api/leads/:id
+```
 
 ---
 
 ## Authentication API
 
+```
 POST /api/auth/login
+```
 
 ---
 
@@ -187,8 +201,6 @@ POST /api/auth/login
 git clone https://github.com/rutuharde99/LeadDesk-Mini.git
 ```
 
----
-
 ## Install Frontend
 
 ```bash
@@ -196,8 +208,6 @@ cd client
 npm install
 npm run dev
 ```
-
----
 
 ## Install Backend
 
@@ -223,16 +233,12 @@ Hosted on Railway
 
 # Author
 
-Rutika Harde
+**Rutika Harde**
 
 B.Tech Information Technology
-
-Digital Heroes Full Stack Development Internship Assignment
 
 ---
 
 # Built For
 
-Built for Digital Heroes Training Task.
-
-https://digitalheroesco.com
+Digital Heroes Full Stack Development Training Task.
