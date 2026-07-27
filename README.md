@@ -2,55 +2,61 @@
 
 Built for Digital Heroes Full Stack Development Training Task.
 
-## Live Demo
+---
 
-### Frontend
-https://YOUR-VERCEL-URL.vercel.app
+# Live Demo
 
-### Admin
-https://YOUR-VERCEL-URL.vercel.app/admin
+## Frontend
 
-### Backend
+https://lead-desk-mini-one-delta.vercel.app
+
+## Admin
+
+https://lead-desk-mini-one-delta.vercel.app/admin
+
+## Backend
+
 https://leaddesk-mini-production-d5ae.up.railway.app
 
 ---
 
 # Test Credentials
 
-Email:
+**Email**
+
 admin@gmail.com
 
-Password:
+**Password**
+
 admin123
 
 ---
 
 # Project Overview
 
-LeadDesk Mini is a full stack lead management application.
+LeadDesk Mini is a Full Stack Lead Management Application built as part of the Digital Heroes Full Stack Development Internship Assignment.
 
-It allows visitors to submit business enquiries through a public landing page.
-
-The submitted leads are stored in a MySQL database.
-
-The admin can securely log in, view all leads, search them, and update their status.
+The application allows users to submit business enquiries through a public landing page. All submitted leads are stored in a MySQL database. The administrator can securely log in, view all leads, search leads, and update their status.
 
 ---
 
 # Features
 
 - Public Landing Page
+- Responsive UI
 - Lead Capture Form
 - Client-side Validation
 - Server-side Validation
-- MySQL Database
-- Admin Login (JWT Authentication)
+- MySQL Database Integration
+- Admin Login using JWT Authentication
+- Secure Password Hashing with bcrypt
 - Admin Dashboard
+- View All Leads
 - Search Leads
-- Update Lead Status
-- Responsive UI
-- Railway Deployment
-- Vercel Deployment
+- Update Lead Status (New / Contacted / Closed)
+- REST API
+- Railway Backend Deployment
+- Vercel Frontend Deployment
 
 ---
 
@@ -60,9 +66,9 @@ The admin can securely log in, view all leads, search them, and update their sta
 
 - React
 - Vite
-- HTML
-- CSS
-- JavaScript
+- HTML5
+- CSS3
+- JavaScript (ES6)
 - Axios
 
 ## Backend
@@ -76,7 +82,7 @@ The admin can securely log in, view all leads, search them, and update their sta
 
 ## Authentication
 
-- JWT
+- JWT (JSON Web Token)
 - bcrypt
 
 ## Deployment
@@ -88,13 +94,29 @@ The admin can securely log in, view all leads, search them, and update their sta
 
 # Folder Structure
 
-```
-LeadDesk-Mini
+```text
+LeadDesk-Mini/
 
-client/
-server/
-docs/
-screenshots/
+│
+├── client/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── server/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── server.js
+│   └── package.json
+│
+├── docs/
+│
+├── screenshots/
+│
+└── README.md
 ```
 
 ---
@@ -103,36 +125,43 @@ screenshots/
 
 ## users
 
-- id
-- name
-- email
-- password
+| Column | Type |
+|---------|------|
+| id | INT |
+| name | VARCHAR |
+| email | VARCHAR |
+| password | VARCHAR |
+
+---
 
 ## leads
 
-- id
-- name
-- email
-- budget
-- message
-- status
-- created_at
+| Column | Type |
+|---------|------|
+| id | INT |
+| name | VARCHAR |
+| email | VARCHAR |
+| budget | VARCHAR |
+| message | TEXT |
+| status | VARCHAR |
+| created_at | TIMESTAMP |
 
 ---
 
 # Authentication
 
-Admin authentication uses JSON Web Token (JWT).
+The Admin Dashboard is protected using JWT Authentication.
 
-Passwords are securely stored using bcrypt hashing.
-
-Only authenticated users can access the Admin Dashboard.
+- User logs in with email and password.
+- Passwords are securely hashed using bcrypt.
+- A JWT token is generated after successful login.
+- Protected routes are accessible only with a valid token.
 
 ---
 
 # API Endpoints
 
-## Leads
+## Lead APIs
 
 POST /api/leads
 
@@ -144,7 +173,7 @@ DELETE /api/leads/:id
 
 ---
 
-## Authentication
+## Authentication API
 
 POST /api/auth/login
 
@@ -152,23 +181,27 @@ POST /api/auth/login
 
 # Installation
 
-Clone the repository
+## Clone Repository
 
-```
-git clone <repository-url>
+```bash
+git clone https://github.com/rutuharde99/LeadDesk-Mini.git
 ```
 
-Install frontend
+---
 
-```
+## Install Frontend
+
+```bash
 cd client
 npm install
 npm run dev
 ```
 
-Install backend
+---
 
-```
+## Install Backend
+
+```bash
 cd server
 npm install
 npm start
@@ -178,14 +211,28 @@ npm start
 
 # Deployment
 
-Frontend deployed on Vercel.
+## Frontend
 
-Backend deployed on Railway.
+Hosted on Vercel
+
+## Backend
+
+Hosted on Railway
+
+---
+
+# Author
+
+Rutika Harde
+
+B.Tech Information Technology
+
+Digital Heroes Full Stack Development Internship Assignment
 
 ---
 
 # Built For
 
-Digital Heroes Full Stack Development Internship Assignment.
-
 Built for Digital Heroes Training Task.
+
+https://digitalheroesco.com
