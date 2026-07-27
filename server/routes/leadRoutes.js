@@ -3,9 +3,9 @@ const express = require("express");
 const router = express.Router();
 
 const {
-  createLead,
-  getLeads,
-  updateLeadStatus
+    createLead,
+    getLeads,
+    updateLeadStatus
 } = require("../controllers/leadController");
 
 router.post("/", createLead);

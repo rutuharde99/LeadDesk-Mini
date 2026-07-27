@@ -2,49 +2,75 @@ const db = require("../config/db");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+// =====================================
+// Admin Login
+// =====================================
+
 const loginAdmin = (req, res) => {
 
-    console.log("Step 1");
+    console.log("========== LOGIN REQUEST ==========");
 
     const { email, password } = req.body;
 
-    console.log("Email:", email);
+    // Validate Request
+    if (!email || !password) {
+        return res.status(400).json({
+            success: false,
+            message: "Email and Password are required"
+        });
+    }
+
+    console.log("Searching Admin:", email);
 
     const sql = "SELECT * FROM admins WHERE email = ?";
 
-    db.query(sql, [email], async (err, result) => {
-
-        console.log("Step 2");
+    db.query(sql, [email], async (err, results) => {
 
         if (err) {
-            console.log(err);
+
+            console.error("Database Error:");
+            console.error(err);
+
             return res.status(500).json({
+                success: false,
                 message: "Database Error"
             });
+
         }
 
-        if (result.length === 0) {
-            console.log("Step 3");
+        if (results.length === 0) {
+
+            console.log("Admin Not Found");
+
             return res.status(401).json({
+                success: false,
                 message: "Invalid Email"
             });
+
         }
 
-        const admin = result[0];
+        const admin = results[0];
 
-        console.log("Step 4");
+        console.log("Admin Found");
+
+        // Compare Password
 
         const isMatch = await bcrypt.compare(password, admin.password);
 
-        console.log("Step 5");
-
         if (!isMatch) {
+
+            console.log("Wrong Password");
+
             return res.status(401).json({
-                message: "Wrong Password"
+                success: false,
+                message: "Invalid Password"
             });
+
         }
 
-        console.log("Step 6");
+        console.log("Password Matched");
+
+        // Generate JWT Token
 
         const token = jwt.sign(
             {
@@ -57,11 +83,26 @@ const loginAdmin = (req, res) => {
             }
         );
 
-        console.log("Step 7");
+        console.log("JWT Token Generated");
 
-        res.json({
+        return res.status(200).json({
+
             success: true,
-            token
+
+            message: "Login Successful",
+
+            token,
+
+            admin: {
+
+                id: admin.id,
+
+                name: admin.name,
+
+                email: admin.email
+
+            }
+
         });
 
     });
